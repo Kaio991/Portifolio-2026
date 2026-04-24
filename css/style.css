@@ -1,0 +1,313 @@
+/* KAIO ALENCAR | ULTIMATE TECH PORTFOLIO 2026
+   VIBE: HIGH-END BACKEND ENGINEER (0 BREGUICE)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --bg-color: #050505;
+    --card-bg: rgba(18, 18, 18, 0.7);
+    --text-primary: #ffffff;
+    --text-secondary: #999999;
+    --accent-color: #2e66ff;
+    --border-color: rgba(255, 255, 255, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Efeito de profundidade no fundo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% -20%, #1a1a1a 0%, transparent 50%);
+    z-index: -1;
+}
+
+/* HEADER */
+header {
+    padding: 1.5rem 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(5, 5, 5, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+}
+
+.links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 2.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.links a:hover {
+    color: var(--text-primary);
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 180px 10% 100px 10%;
+    min-height: 90vh;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+h1 {
+    font-size: clamp(4rem, 8vw, 7rem);
+    font-weight: 800;
+    line-height: 0.85;
+    letter-spacing: -5px;
+    margin-bottom: 30px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.hero-image img {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 50px rgba(46, 102, 255, 0.1);
+}
+
+/* CONTAINER DOS BOTÕES DE ÍCONE (HERO) */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* BOTÕES REDONDOS (GITHUB, LINKEDIN, IG) */
+.cta-buttons .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--text-primary);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cta-buttons .btn svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.cta-buttons .btn:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    transform: translateY(-5px) scale(1.1);
+}
+
+.cta-buttons .btn.secondary {
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* SEÇÕES GERAIS */
+#projects,
+#about,
+#contact {
+    padding: 120px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 4rem;
+    letter-spacing: -3px;
+    font-weight: 800;
+    background: linear-gradient(180deg, #fff 30%, #444 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+}
+
+/* CARDS DE VIDRO */
+.project-card,
+.about-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    padding: 50px;
+    border-radius: 24px;
+    max-width: 850px;
+    width: 100%;
+    margin-bottom: 40px;
+    transition: 0.5s ease;
+    position: relative;
+}
+
+.project-card::before,
+.about-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+}
+
+.project-type {
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* AJUSTE DO BOTÃO DE E-MAIL (CONTATO) */
+.btn-email {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 16px 45px;
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--text-primary);
+    border-radius: 50px;
+    /* Formato pílula */
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.btn-email:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* TAGS E SKILLS */
+.tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    border: 1px solid var(--border-color);
+}
+
+.tech-stack-icons span {
+    font-weight: 800;
+    color: var(--accent-color);
+    text-shadow: 0 0 12px rgba(46, 102, 255, 0.4);
+}
+
+/* FOOTER */
+footer {
+    padding: 60px;
+    text-align: center;
+    color: #333;
+    font-size: 0.7rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1000px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 150px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+}
